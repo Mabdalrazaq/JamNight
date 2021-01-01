@@ -4,8 +4,8 @@ import band.Band;
 import band.Musician;
 import java.util.Collections;
 import java.util.Scanner;
-import static application.DB.bands;
-import static application.DB.bandlessMusicians;
+import static database.DB.bands;
+import static database.DB.bandlessMusicians;
 
 public class Commands {
   private Commands(){}

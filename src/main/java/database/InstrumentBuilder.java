@@ -1,4 +1,4 @@
-package application;
+package database;
 
 import instrument.Banjo;
 import instrument.Drums;

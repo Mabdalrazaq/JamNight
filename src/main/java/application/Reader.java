@@ -2,6 +2,9 @@ package application;
 
 import band.Band;
 import band.Musician;
+import database.InstrumentBuilder;
+import database.JSONArrayWrapper;
+import database.JSONObjectWrapper;
 import instrument.Instrument;
 import java.io.FileReader;
 import java.io.IOException;
@@ -48,7 +51,7 @@ public class Reader {
 
   private static Musician buildMusicianFromJson(JSONObjectWrapper jsonMusician){
     String musicianName=jsonMusician.getString("name");
-    Instrument instrument=InstrumentBuilder.buildInstrumentFromJson(jsonMusician.getJsonObject("instrument"));
+    Instrument instrument= InstrumentBuilder.buildInstrumentFromJson(jsonMusician.getJsonObject("instrument"));
     return new Musician(musicianName,instrument);
   }
 

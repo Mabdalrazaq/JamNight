@@ -1,4 +1,4 @@
-package application;
+package database;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
