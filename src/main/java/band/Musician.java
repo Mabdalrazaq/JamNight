@@ -19,10 +19,6 @@ public class Musician {
     return instrument;
   }
 
-  public boolean compareInstrument(Musician other){
-    return instrument.compareInstrument(other.getInstrument());
-  }
-
   @Override
   public String toString() {
     return "band.Musician{" +

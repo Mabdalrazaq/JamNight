@@ -1,29 +1,28 @@
 package band;
 
+import instrument.InstrumentType;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class Band {
-  private List<Musician> members;
+  private Map<InstrumentType,Musician> members;
   private String name;
   public Band(String name){
     this.name=name;
-    members=new ArrayList<Musician>();
+    members=new HashMap<>();
   }
 
   public boolean hasMembersWithSameInstrument(Musician musician){
-    for(Musician member: getMembers()){
-      if(member.compareInstrument(musician))
-        return true;
-    }
-    return false;
+    return members.get(musician.getInstrument())==null;
   }
 
   public void addMember(Musician musician){
     if(hasMembersWithSameInstrument(musician))
       throw new IllegalArgumentException("There is already a member with the same instrument as the musician you are trying to add");
-    members.add(musician);
+    members.put(musician.getInstrument().getType(),musician);
 
   }
 
@@ -33,15 +32,15 @@ public class Band {
   }
 
   public List<Musician> getMembers() {
-    return members;
+    return new ArrayList<>(members.values());
   }
 
   public Musician getRandomMember(){
-    return members.get(new Random().nextInt(members.size()));
+    return getMembers().get(new Random().nextInt(members.size()));
   }
 
   public void removeMember(Musician musician){
-    if(members.remove(musician))
+    if(members.remove(musician.getInstrument(),musician))
       return;
     throw new IllegalArgumentException("This musician is not in this band to be removed from it");
   }
