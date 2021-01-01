@@ -2,29 +2,14 @@ package instrument;
 
 public abstract class PercussionFamily extends AbstractInstrument {
 
-  public abstract static class Builder extends AbstractInstrument.Builder {
+  private boolean hasHiHat;
 
-    private boolean hasHiHat;
-
-    public Builder(String manufacturerName) {
-      super(manufacturerName);
-      hasHiHat = false;
-    }
-
-    public Builder setHiHat(boolean hasHiHat) {
-      this.hasHiHat = hasHiHat;
-      return this;
-    }
-
-    public abstract PercussionFamily build();
+  public PercussionFamily(String manufacturerName) {
+    super(manufacturerName);
   }
 
-
-  private final boolean hasHiHat;
-
-  public PercussionFamily(Builder builder) {
-    super(builder);
-    hasHiHat = builder.hasHiHat;
+  public void setHasHiHat(boolean hasHiHat) {
+    this.hasHiHat = hasHiHat;
   }
 
   @Override

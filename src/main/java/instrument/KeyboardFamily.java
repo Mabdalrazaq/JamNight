@@ -2,29 +2,14 @@ package instrument;
 
 public abstract class KeyboardFamily extends AbstractInstrument {
 
-  private final int numOfKeys;
+  private int numOfKeys;
 
-  public abstract static class Builder extends AbstractInstrument.Builder {
-
-    private int numOfKeys;
-
-    public Builder(String manufacturerName) {
-      super(manufacturerName);
-      numOfKeys = 0;
-    }
-
-    public Builder setNumOfKeys(int numOfKeys) {
-      this.numOfKeys = numOfKeys;
-      return this;
-    }
-
-    public abstract KeyboardFamily build();
+  public KeyboardFamily(String manufacturerName) {
+    super(manufacturerName);
   }
 
-
-  public KeyboardFamily(Builder builder) {
-    super(builder);
-    numOfKeys = builder.numOfKeys;
+  public void setNumOfKeys(int numOfKeys) {
+    this.numOfKeys = numOfKeys;
   }
 
   @Override

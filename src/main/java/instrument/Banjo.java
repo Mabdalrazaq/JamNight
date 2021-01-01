@@ -2,19 +2,8 @@ package instrument;
 
 public class Banjo extends StringedFamily {
 
-  public static class Builder extends StringedFamily.Builder {
-
-    public Builder(String manufacturerName) {
-      super(manufacturerName);
-    }
-
-    public StringedFamily build() {
-      return new Banjo(this);
-    }
-  }
-
-  public Banjo(Builder builder) {
-    super(builder);
+  public Banjo(String manufacturerName) {
+    super(manufacturerName);
   }
 
   public InstrumentType getType() {

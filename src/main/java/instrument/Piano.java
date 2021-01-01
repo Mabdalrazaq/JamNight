@@ -2,39 +2,18 @@ package instrument;
 
 public class Piano extends KeyboardFamily {
 
-  private final boolean isAcoustic;
+  private boolean isAcoustic;
 
-  public static class Builder extends KeyboardFamily.Builder {
-
-    private boolean isAcoustic;
-
-    public Builder(String manufacturerName) {
-      super(manufacturerName);
-      this.isAcoustic = false;
-    }
-
-    public Builder setAcoustic(boolean isAcoustic) {
-      this.isAcoustic = isAcoustic;
-      return this;
-    }
-
-    public KeyboardFamily build() {
-      return new Piano(this);
-    }
+  public Piano(String manufacturerName) {
+    super(manufacturerName);
   }
 
-
-  public Piano(Builder builder) {
-    super(builder);
-    this.isAcoustic = builder.isAcoustic;
+  public void setAcoustic(boolean isAcoustic) {
+    this.isAcoustic = isAcoustic;
   }
 
   public InstrumentType getType() {
     return InstrumentType.PIANO;
-  }
-
-  public boolean isAcoustic() {
-    return isAcoustic;
   }
 
   @Override

@@ -2,39 +2,20 @@ package instrument;
 
 public abstract class StringedFamily extends AbstractInstrument {
 
-  private final int numOfStrings;
-  private final double sizeOfString; //In mm
-
-  public abstract static class Builder extends AbstractInstrument.Builder {
-
-    private int numOfStrings;
-    private double sizeOfString;
-
-    public Builder(String manufacturerName) {
-      super(manufacturerName);
-      numOfStrings = 0;
-      sizeOfString = 0;
-    }
-
-    public Builder setNumOfStrings(int numOfStrings) {
-      this.numOfStrings = numOfStrings;
-      return this;
-    }
-
-    public Builder setSizeOfString(double sizeOfString) {
-      this.sizeOfString = sizeOfString;
-      return this;
-    }
+  private int numOfStrings;
+  private double sizeOfString; //In mm
 
 
-    public abstract StringedFamily build();
+  public StringedFamily(String manufacturerName) {
+    super(manufacturerName);
   }
 
+  public void setNumOfStrings(int numOfStrings) {
+    this.numOfStrings = numOfStrings;
+  }
 
-  public StringedFamily(Builder builder) {
-    super(builder);
-    numOfStrings = builder.numOfStrings;
-    sizeOfString = builder.sizeOfString;
+  public void setSizeOfString(double sizeOfString) {
+    this.sizeOfString = sizeOfString;
   }
 
   @Override

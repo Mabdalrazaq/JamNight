@@ -2,31 +2,14 @@ package instrument;
 
 public class Synthesizer extends KeyboardFamily {
 
-  private final boolean hasLed;
+  private boolean hasLed;
 
-  public static class Builder extends KeyboardFamily.Builder {
-
-    private boolean hasLed;
-
-    public Builder(String manufacturerName) {
-      super(manufacturerName);
-      this.hasLed = false;
-    }
-
-    public Builder setLed(boolean hasLed) {
-      this.hasLed = hasLed;
-      return this;
-    }
-
-    public KeyboardFamily build() {
-      return new Synthesizer(this);
-    }
+  public Synthesizer(String manufacturerName) {
+    super(manufacturerName);
   }
 
-
-  public Synthesizer(Builder builder) {
-    super(builder);
-    this.hasLed = builder.hasLed;
+  public void setHasLed(boolean hasLed) {
+    this.hasLed = hasLed;
   }
 
   public InstrumentType getType() {
