@@ -1,49 +1,36 @@
 package instrument;
 
 public abstract class KeyboardFamily extends AbstractInstrument {
-  private final String manufacturerName;
+
   private final int numOfKeys;
 
-  public abstract static class Builder {
+  public abstract static class Builder extends AbstractInstrument.Builder {
 
-    private String manufacturerName;
     private int numOfKeys;
 
-    public Builder() {
-      manufacturerName="unknown";
-      numOfKeys=0;
-    }
-
-    public Builder setManufacturerName(String manufacturerName) {
-      this. manufacturerName=manufacturerName;
-      return this;
+    public Builder(String manufacturerName) {
+      super(manufacturerName);
+      numOfKeys = 0;
     }
 
     public Builder setNumOfKeys(int numOfKeys) {
-      this.numOfKeys=numOfKeys;
+      this.numOfKeys = numOfKeys;
       return this;
     }
 
     public abstract KeyboardFamily build();
   }
 
+
   public KeyboardFamily(Builder builder) {
-    manufacturerName=builder.manufacturerName;
-    numOfKeys=builder.numOfKeys;
-  }
-
-  public String getManufacturerName() {
-    return manufacturerName;
-  }
-
-
-  public int getNumOfKeys() {
-    return numOfKeys;
+    super(builder);
+    numOfKeys = builder.numOfKeys;
   }
 
   @Override
   public String toString() {
-    return "-number of key: "+numOfKeys
-        +"\n"+"-manufacturer: "+manufacturerName;
+    return "-number of key: " + numOfKeys
+        + "\n" + super.toString();
   }
+
 }

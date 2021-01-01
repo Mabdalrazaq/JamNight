@@ -2,6 +2,18 @@ package instrument;
 
 public class Guitar extends StringedFamily {
 
+  public static class Builder extends StringedFamily.Builder {
+
+    public Builder(String manufacturerName) {
+      super(manufacturerName);
+    }
+
+    public StringedFamily build() {
+      return new Guitar(this);
+    }
+  }
+
+
   public Guitar(Builder builder) {
     super(builder);
   }
@@ -10,16 +22,10 @@ public class Guitar extends StringedFamily {
     return InstrumentType.GUITAR;
   }
 
-  public static class Builder extends StringedFamily.Builder{
-
-    public StringedFamily build() {
-      return new Guitar(this);
-    }
-  }
-
   @Override
   public String toString() {
     return "Instrument: Guitar"
-        +"\n"+super.toString();
+        + "\n" + super.toString();
   }
+
 }

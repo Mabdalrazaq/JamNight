@@ -6,6 +6,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class JSONArrayWrapper {
+
   private final List<JSONObjectWrapper> jsonList;
 
   public JSONArrayWrapper(JSONArray jsonArray) {

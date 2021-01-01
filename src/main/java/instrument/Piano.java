@@ -1,17 +1,20 @@
 package instrument;
 
 public class Piano extends KeyboardFamily {
+
   private final boolean isAcoustic;
 
-  public static class Builder extends KeyboardFamily.Builder{
+  public static class Builder extends KeyboardFamily.Builder {
+
     private boolean isAcoustic;
-    public Builder(){
-      super();
-      this.isAcoustic=false;
+
+    public Builder(String manufacturerName) {
+      super(manufacturerName);
+      this.isAcoustic = false;
     }
 
-    public Builder setAcoustic(boolean isAcoustic){
-      this.isAcoustic=isAcoustic;
+    public Builder setAcoustic(boolean isAcoustic) {
+      this.isAcoustic = isAcoustic;
       return this;
     }
 
@@ -20,12 +23,13 @@ public class Piano extends KeyboardFamily {
     }
   }
 
+
   public Piano(Builder builder) {
     super(builder);
-    this.isAcoustic=builder.isAcoustic;
+    this.isAcoustic = builder.isAcoustic;
   }
 
-  public InstrumentType getType(){
+  public InstrumentType getType() {
     return InstrumentType.PIANO;
   }
 
@@ -36,7 +40,8 @@ public class Piano extends KeyboardFamily {
   @Override
   public String toString() {
     return "Instrument: Piano"
-        +"\n"+"-is"+(isAcoustic?" ":" not ")+"acoustic"
-        +"\n"+super.toString();
+        + "\n" + "-is" + (isAcoustic ? " " : " not ") + "acoustic"
+        + "\n" + super.toString();
   }
+
 }
