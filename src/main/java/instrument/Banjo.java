@@ -19,10 +19,7 @@ public class Banjo extends StringedFamily {
 
   @Override
   public String toString() {
-    return "Banjo"
-        +"\n"+", number of strings= "+getNumOfStrings()
-        +"\n"+", string size= "+ getStringSize()
-        +"\n"+", manufacturer= "+getManufacturerName();
-
+    return "Instrument: Banjo"
+        +"\n"+super.toString();
   }
 }

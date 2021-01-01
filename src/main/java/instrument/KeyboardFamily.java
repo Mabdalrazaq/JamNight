@@ -41,4 +41,9 @@ public abstract class KeyboardFamily extends AbstractInstrument {
     return numOfKeys;
   }
 
+  @Override
+  public String toString() {
+    return "-number of key: "+numOfKeys
+        +"\n"+"-manufacturer: "+manufacturerName;
+  }
 }

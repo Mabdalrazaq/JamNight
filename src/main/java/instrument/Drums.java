@@ -19,9 +19,8 @@ public class Drums extends PercussionFamily {
 
   @Override
   public String toString() {
-    return "Drums"
-        +"\n"+", has hi-hat= " + hasHiHat()
-        +"\n"+", manufacturer= "+getManufacturerName();
+    return "Instrument: Drums"
+        +"\n"+super.toString();
 
   }
 }

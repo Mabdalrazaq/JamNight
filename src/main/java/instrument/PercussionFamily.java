@@ -14,7 +14,7 @@ public abstract class PercussionFamily extends AbstractInstrument{
       hasHiHat=false;
     }
 
-    public Builder setManufactureName(String manufacturerName) {
+    public Builder setManufacturerName(String manufacturerName) {
       this. manufacturerName=manufacturerName;
       return this;
     }
@@ -37,5 +37,11 @@ public abstract class PercussionFamily extends AbstractInstrument{
 
   public boolean hasHiHat() {
     return hasHiHat;
+  }
+
+  @Override
+  public String toString() {
+    return "-has"+(hasHiHat?" ":" no ")+"hi-hat"
+        +"\n"+"-manufacturer: "+manufacturerName;
   }
 }

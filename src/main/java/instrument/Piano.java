@@ -35,9 +35,8 @@ public class Piano extends KeyboardFamily {
 
   @Override
   public String toString() {
-    return "Piano"
-        +"\n"+", number of keys= "+getNumOfKeys()
-        +"\n"+", is acoustic= "+isAcoustic
-        +"\n"+", manufacturer= "+getManufacturerName();
+    return "Instrument: Piano"
+        +"\n"+"is"+(isAcoustic?" ":" not ")+"acoustic"
+        +"\n"+super.toString();
   }
 }

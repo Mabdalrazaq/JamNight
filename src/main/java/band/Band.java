@@ -8,15 +8,15 @@ import java.util.Map;
 import java.util.Random;
 
 public class Band {
-  private Map<InstrumentType,Musician> members;
-  private String name;
+  private final Map<InstrumentType,Musician> members;
+  private final String name;
   public Band(String name){
     this.name=name;
     members=new HashMap<>();
   }
 
   public boolean hasMembersWithSameInstrument(Musician musician){
-    return members.get(musician.getInstrument())==null;
+    return members.get(musician.getInstrumentType())!=null;
   }
 
   public void addMember(Musician musician){
@@ -40,12 +40,14 @@ public class Band {
   }
 
   public void removeMember(Musician musician){
-    if(members.remove(musician.getInstrument(),musician))
+    if(members.remove(musician.getInstrumentType(),musician))
       return;
     throw new IllegalArgumentException("This musician is not in this band to be removed from it");
   }
 
-
+  public String getName() {
+    return name;
+  }
 }
 
 

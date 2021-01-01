@@ -12,18 +12,32 @@ public class Commands {
 
   private static void play(){
     for(Band band: bands){
-      Musician removedMember=band.getRandomMember();
-      band.removeMember(removedMember);
-      Printer.printLeaving(removedMember,band);
-      Collections.shuffle(bandlessMusicians);
-      for(Musician musician:bandlessMusicians){
-        if(band.hasMembersWithSameInstrument(musician))
-          continue;
-        band.addMember(musician);
-        Printer.printJoining(musician,band);
-      }
-      bandlessMusicians.add(removedMember);
+      Musician memberToBeRemoved=band.getRandomMember();
+      removeMemberFromBand(memberToBeRemoved,band);
+      addNewMemberToBand(band);
+      addRemovedMemberToBandlessGroup(memberToBeRemoved);
     }
+  }
+
+  private static void removeMemberFromBand(Musician memberToBeRemoved,Band band){
+    band.removeMember(memberToBeRemoved);
+    Printer.printLeaving(memberToBeRemoved,band);
+  }
+
+  private static void addNewMemberToBand(Band band){
+    Collections.shuffle(bandlessMusicians);
+    for(Musician musician:bandlessMusicians){
+      if(band.hasMembersWithSameInstrument(musician))
+        continue;
+      band.addMember(musician);
+      bandlessMusicians.remove(musician);
+      Printer.printJoining(musician,band);
+      break;
+    }
+  }
+
+  private static void addRemovedMemberToBandlessGroup(Musician memberToBeRemoved){
+    bandlessMusicians.add(memberToBeRemoved);
   }
 
   private static void list(){
@@ -38,7 +52,7 @@ public class Commands {
   }
 
   public static void executeCommand(){
-    System.out.println("$ ");
+    System.out.print("$ ");
     Scanner scanner=new Scanner(System.in);
     String commandQuery=scanner.nextLine();
     switch (commandQuery.toLowerCase()){

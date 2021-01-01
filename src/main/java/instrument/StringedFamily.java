@@ -3,13 +3,13 @@ package instrument;
 public abstract class StringedFamily extends AbstractInstrument {
   private final String manufacturerName;
   private final int numOfStrings;
-  private final int sizeOfString; //In mm
+  private final double sizeOfString; //In mm
 
   public abstract static class Builder {
 
     private String manufacturerName;
     private int numOfStrings;
-    private int sizeOfString;
+    private double sizeOfString;
 
     public Builder() {
       manufacturerName="unknown";
@@ -25,8 +25,8 @@ public abstract class StringedFamily extends AbstractInstrument {
       this.numOfStrings=numOfStrings;
       return this;
     }
-    public Builder setSizeOfString(String manufacturerName) {
-      this. manufacturerName=manufacturerName;
+    public Builder setSizeOfString(double sizeOfString) {
+      this.sizeOfString=sizeOfString;
       return this;
     }
 
@@ -44,12 +44,18 @@ public abstract class StringedFamily extends AbstractInstrument {
     return manufacturerName;
   }
 
-
   public int getNumOfStrings() {
     return numOfStrings;
   }
 
-  public int getStringSize() {
+  public double getStringSize() {
     return sizeOfString;
+  }
+
+  @Override
+  public String toString() {
+    return "-number of strings: "+numOfStrings
+        +"\n"+"-string size: "+sizeOfString
+        +"\n"+"-manufacturer: "+manufacturerName;
   }
 }

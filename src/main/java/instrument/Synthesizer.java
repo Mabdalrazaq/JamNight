@@ -35,9 +35,8 @@ public class Synthesizer extends KeyboardFamily {
 
   @Override
   public String toString() {
-    return "Synthesizer"
-        +"\n"+", number of keys= "+getNumOfKeys()
-        +"\n"+", has led= "+hasLed
-        +"\n"+", manufacturer= "+getManufacturerName();
+    return "Instrument: Synthesizer"
+        +"\n"+"has"+(hasLed?" ":" no ")+"led"
+        +"\n"+super.toString();
   }
 }

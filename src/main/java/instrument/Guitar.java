@@ -19,9 +19,7 @@ public class Guitar extends StringedFamily {
 
   @Override
   public String toString() {
-    return "Guitar"
-        +"\n"+", number of strings= "+getNumOfStrings()
-        +"\n"+", string size= "+ getStringSize()
-        +"\n"+", manufacturer= "+getManufacturerName();
+    return "Instrument: Guitar"
+        +"\n"+super.toString();
   }
 }
