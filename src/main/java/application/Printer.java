@@ -2,6 +2,7 @@ package application;
 
 import band.Band;
 import band.Musician;
+import java.util.List;
 
 public class Printer {
 
@@ -13,7 +14,10 @@ public class Printer {
   public static void printJoining(Musician musician, Band band){
 
   }
-  public static void printDetails(Band band){
+  public static void printBandDetails(Band band){
+
+  }
+  public static void printBandlessMusiciansDetails(List<Musician> bandlessMusicians){
 
   }
   public static void printWrongCommand(){

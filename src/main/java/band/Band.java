@@ -12,19 +12,19 @@ public class Band {
     members=new ArrayList<Musician>();
   }
 
-  public boolean hasNoMembersWithSameInstrument(Musician musician){
+  public boolean hasMembersWithSameInstrument(Musician musician){
     for(Musician member: getMembers()){
       if(member.compareInstrument(musician))
-        return false;
+        return true;
     }
-    return true;
+    return false;
   }
 
   public void addMember(Musician musician){
-    if(hasNoMembersWithSameInstrument(musician))
-        members.add(musician);
-    else
+    if(hasMembersWithSameInstrument(musician))
       throw new IllegalArgumentException("There is already a member with the same instrument as the musician you are trying to add");
+    members.add(musician);
+
   }
 
   public void addMembers(List<Musician> musicians){

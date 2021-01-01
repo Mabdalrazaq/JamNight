@@ -12,17 +12,29 @@ public class Commands {
 
   private static void play(){
     for(Band band: bands){
-      band.removeMember(band.getRandomMember());
-
+      Musician removedMember=band.getRandomMember();
+      band.removeMember(removedMember);
+      Printer.printLeaving(removedMember,band);
+      Collections.shuffle(bandlessMusicians);
+      for(Musician musician:bandlessMusicians){
+        if(band.hasMembersWithSameInstrument(musician))
+          continue;
+        band.addMember(musician);
+        Printer.printJoining(musician,band);
+      }
+      bandlessMusicians.add(removedMember);
     }
   }
 
   private static void list(){
-
+    for(Band band: bands){
+      Printer.printBandDetails(band);
+    }
+    Printer.printBandlessMusiciansDetails(bandlessMusicians);
   }
 
   private static void exit(){
-
+    System.exit(1);
   }
 
   public static void executeCommand(){
