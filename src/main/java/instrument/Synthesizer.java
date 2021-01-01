@@ -36,7 +36,7 @@ public class Synthesizer extends KeyboardFamily {
   @Override
   public String toString() {
     return "Instrument: Synthesizer"
-        +"\n"+"has"+(hasLed?" ":" no ")+"led"
+        +"\n"+"-has"+(hasLed?" ":" no ")+"led"
         +"\n"+super.toString();
   }
 }

@@ -1,0 +1,12 @@
+[
+  {
+    "name":"Sloe Jee",
+    "instrument":
+    {
+      "type": "banjo",
+      "stringsNum": 4,
+      "stringSize": 0.7,
+      "manufacturer": "Spic"
+    }
+  }
+]

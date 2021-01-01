@@ -55,7 +55,7 @@ public abstract class StringedFamily extends AbstractInstrument {
   @Override
   public String toString() {
     return "-number of strings: "+numOfStrings
-        +"\n"+"-string size: "+sizeOfString
+        +"\n"+"-string size: "+sizeOfString+"mm"
         +"\n"+"-manufacturer: "+manufacturerName;
   }
 }

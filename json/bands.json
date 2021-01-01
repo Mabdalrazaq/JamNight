@@ -1,0 +1,78 @@
+[
+  {
+    "name": "Spoke 'n hub",
+    "members":
+        [
+          {
+            "name":"Liza Baar",
+            "instrument":
+            {
+              "type": "guitar",
+              "stringsNum": 5,
+              "stringSize": 0.4,
+              "manufacturer": "Bender"
+            }
+          }
+          ,
+          {
+            "name":"Null Beat",
+            "instrument":
+            {
+              "type": "piano",
+              "keysNum": 51,
+              "manufacturer": "McFaren",
+              "isAcoustic": true
+            }
+          }
+          ,
+          {
+            "name":"Void",
+            "instrument":
+            {
+              "type": "synthesizer",
+              "keysNum": 47,
+              "manufacturer": "Lorg",
+              "hasLed": true
+            }
+          }
+        ]
+  }
+  ,
+  {
+    "name": "Feelrats",
+    "members":
+    [
+      {
+        "name":"Stringsteen",
+        "instrument":
+        {
+          "type": "banjo",
+          "stringsNum": 4,
+          "stringSize": 8,
+          "manufacturer": "Gibson"
+        }
+      }
+    ,
+      {
+        "name":"Xindea",
+        "instrument":
+        {
+          "type": "drums",
+          "manufacturer": "Toyota",
+          "hasHiHat": true
+        }
+      }
+    ,
+      {
+        "name":"Captor",
+        "instrument":
+        {
+          "type": "synthesizer",
+          "keysNum": 72,
+          "manufacturer": "Suzuki",
+          "hasLed": false
+        }
+      }
+    ]
+  }
+]
