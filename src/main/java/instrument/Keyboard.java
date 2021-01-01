@@ -1,4 +1,6 @@
-public abstract class Keyboard {
+package instrument;
+
+public abstract class Keyboard implements Instrument {
   private final String manufacturerName;
   private final int numOfKeys;
 
@@ -12,12 +14,12 @@ public abstract class Keyboard {
       numOfKeys=0;
     }
 
-    public Builder manufacturerName(String manufacturerName) {
+    public Builder setManufacturerName(String manufacturerName) {
       this. manufacturerName=manufacturerName;
       return this;
     }
 
-    public Builder numOfKeys(int numOfKeys) {
+    public Builder setNumOfKeys(int numOfKeys) {
       this.numOfKeys=numOfKeys;
       return this;
     }

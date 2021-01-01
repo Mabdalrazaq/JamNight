@@ -1,3 +1,5 @@
+package instrument;
+
 public class Guitar extends Stringed {
 
   public Guitar(Builder builder) {

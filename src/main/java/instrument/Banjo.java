@@ -1,3 +1,5 @@
+package instrument;
+
 public class Banjo extends Stringed {
 
   public Banjo(Builder builder) {

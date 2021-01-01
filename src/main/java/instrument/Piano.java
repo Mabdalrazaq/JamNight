@@ -1,9 +1,11 @@
+package instrument;
+
 public class Piano extends Keyboard {
   private final boolean isAcoustic;
 
   public static class Builder extends Keyboard.Builder{
     private boolean isAcoustic;
-    Builder(){
+    public Builder(){
       super();
       this.isAcoustic=false;
     }

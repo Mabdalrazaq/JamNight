@@ -1,3 +1,5 @@
+package instrument;
+
 public abstract class Percussion implements Instrument{
   private final String manufacturerName;
   private final boolean hasHiHat;
@@ -12,11 +14,11 @@ public abstract class Percussion implements Instrument{
       hasHiHat=false;
     }
 
-    public Builder manufactureName(String manufacturerName) {
+    public Builder setManufactureName(String manufacturerName) {
       this. manufacturerName=manufacturerName;
       return this;
     }
-    public Builder hasHiHat(boolean hasHiHat) {
+    public Builder setHiHat(boolean hasHiHat) {
       this.hasHiHat=hasHiHat;
       return this;
     }

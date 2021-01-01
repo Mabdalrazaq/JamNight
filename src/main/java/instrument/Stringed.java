@@ -1,3 +1,5 @@
+package instrument;
+
 public abstract class Stringed implements Instrument {
   private final String manufacturerName;
   private final int numOfStrings;
@@ -15,15 +17,15 @@ public abstract class Stringed implements Instrument {
       sizeOfString=0;
     }
 
-    public Builder manufacturerName(String manufacturerName) {
+    public Builder setManufacturerName(String manufacturerName) {
       this. manufacturerName=manufacturerName;
       return this;
     }
-    public Builder numOfStrings(int numOfStrings) {
+    public Builder setNumOfStrings(int numOfStrings) {
       this.numOfStrings=numOfStrings;
       return this;
     }
-    public Builder sizeOfString(String manufacturerName) {
+    public Builder setSizeOfString(String manufacturerName) {
       this. manufacturerName=manufacturerName;
       return this;
     }

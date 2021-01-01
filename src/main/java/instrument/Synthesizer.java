@@ -1,9 +1,11 @@
+package instrument;
+
 public class Synthesizer extends Keyboard {
   private final boolean hasLed;
 
   public static class Builder extends Keyboard.Builder{
     private boolean hasLed;
-    Builder(){
+    public Builder(){
       super();
       this.hasLed=false;
     }
