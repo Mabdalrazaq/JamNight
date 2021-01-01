@@ -1,12 +1,12 @@
 package application;
 
 import band.Band;
-import band.NoBand;
+import band.Musician;
 import java.util.List;
 
 public class DB {
   public static List<Band> bands;
-  public static NoBand bandlessMusicians;
+  public static List<Musician> bandlessMusicians;
 
   private DB(){}
 

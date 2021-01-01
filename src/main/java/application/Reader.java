@@ -1,7 +1,7 @@
 package application;
 
 import band.Band;
-import band.NoBand;
+import band.Musician;
 import java.util.List;
 
 public class Reader {
@@ -11,7 +11,7 @@ public class Reader {
     return null;
   }
 
-  public static NoBand readBandlessMusiciansFromJson(){
+  public static List<Musician> readBandlessMusiciansFromJson(){
     return null;
   }
 }
