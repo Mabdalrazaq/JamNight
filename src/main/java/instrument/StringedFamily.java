@@ -1,6 +1,6 @@
 package instrument;
 
-public abstract class StringedFamily implements Instrument {
+public abstract class StringedFamily extends AbstractInstrument {
   private final String manufacturerName;
   private final int numOfStrings;
   private final int sizeOfString; //In mm

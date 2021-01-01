@@ -1,6 +1,6 @@
 package instrument;
 
-public abstract class KeyboardFamily implements Instrument {
+public abstract class KeyboardFamily extends AbstractInstrument {
   private final String manufacturerName;
   private final int numOfKeys;
 

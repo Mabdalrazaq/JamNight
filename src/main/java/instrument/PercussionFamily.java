@@ -1,6 +1,6 @@
 package instrument;
 
-public abstract class PercussionFamily implements Instrument{
+public abstract class PercussionFamily extends AbstractInstrument{
   private final String manufacturerName;
   private final boolean hasHiHat;
 
