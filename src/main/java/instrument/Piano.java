@@ -1,9 +1,9 @@
 package instrument;
 
-public class Piano extends Keyboard {
+public class Piano extends KeyboardFamily {
   private final boolean isAcoustic;
 
-  public static class Builder extends Keyboard.Builder{
+  public static class Builder extends KeyboardFamily.Builder{
     private boolean isAcoustic;
     public Builder(){
       super();
@@ -15,7 +15,7 @@ public class Piano extends Keyboard {
       return this;
     }
 
-    public Keyboard build() {
+    public KeyboardFamily build() {
       return new Piano(this);
     }
   }

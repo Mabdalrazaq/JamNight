@@ -1,6 +1,6 @@
 package instrument;
 
-public class Banjo extends Stringed {
+public class Banjo extends StringedFamily {
 
   public Banjo(Builder builder) {
     super(builder);
@@ -10,9 +10,9 @@ public class Banjo extends Stringed {
     return InstrumentType.BANJO;
   }
 
-  public static class Builder extends Stringed.Builder{
+  public static class Builder extends StringedFamily.Builder{
 
-    public Stringed build() {
+    public StringedFamily build() {
       return new Banjo(this);
     }
   }

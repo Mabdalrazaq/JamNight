@@ -1,6 +1,6 @@
 package instrument;
 
-public abstract class Stringed implements Instrument {
+public abstract class StringedFamily implements Instrument {
   private final String manufacturerName;
   private final int numOfStrings;
   private final int sizeOfString; //In mm
@@ -31,10 +31,10 @@ public abstract class Stringed implements Instrument {
     }
 
 
-    public abstract Stringed build();
+    public abstract StringedFamily build();
   }
 
-  public Stringed(Builder builder) {
+  public StringedFamily(Builder builder) {
     manufacturerName=builder.manufacturerName;
     numOfStrings=builder.numOfStrings;
     sizeOfString=builder.sizeOfString;

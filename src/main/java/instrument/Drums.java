@@ -1,8 +1,8 @@
 package instrument;
 
-public class Drums extends Percussion {
+public class Drums extends PercussionFamily {
 
-  public static class Builder extends Percussion.Builder{
+  public static class Builder extends PercussionFamily.Builder{
 
     public Drums build() {
       return new Drums(this);

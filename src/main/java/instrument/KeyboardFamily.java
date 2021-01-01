@@ -1,6 +1,6 @@
 package instrument;
 
-public abstract class Keyboard implements Instrument {
+public abstract class KeyboardFamily implements Instrument {
   private final String manufacturerName;
   private final int numOfKeys;
 
@@ -24,10 +24,10 @@ public abstract class Keyboard implements Instrument {
       return this;
     }
 
-    public abstract Keyboard build();
+    public abstract KeyboardFamily build();
   }
 
-  public Keyboard(Builder builder) {
+  public KeyboardFamily(Builder builder) {
     manufacturerName=builder.manufacturerName;
     numOfKeys=builder.numOfKeys;
   }

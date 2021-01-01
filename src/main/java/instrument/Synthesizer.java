@@ -1,9 +1,9 @@
 package instrument;
 
-public class Synthesizer extends Keyboard {
+public class Synthesizer extends KeyboardFamily {
   private final boolean hasLed;
 
-  public static class Builder extends Keyboard.Builder{
+  public static class Builder extends KeyboardFamily.Builder{
     private boolean hasLed;
     public Builder(){
       super();
@@ -15,7 +15,7 @@ public class Synthesizer extends Keyboard {
       return this;
     }
 
-    public Keyboard build() {
+    public KeyboardFamily build() {
       return new Synthesizer(this);
     }
   }

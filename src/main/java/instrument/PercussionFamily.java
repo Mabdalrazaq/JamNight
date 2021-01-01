@@ -1,6 +1,6 @@
 package instrument;
 
-public abstract class Percussion implements Instrument{
+public abstract class PercussionFamily implements Instrument{
   private final String manufacturerName;
   private final boolean hasHiHat;
 
@@ -23,10 +23,10 @@ public abstract class Percussion implements Instrument{
       return this;
     }
 
-    public abstract Percussion build();
+    public abstract PercussionFamily build();
   }
 
-  public Percussion(Builder builder) {
+  public PercussionFamily(Builder builder) {
     manufacturerName=builder.manufacturerName;
     hasHiHat=builder.hasHiHat;
   }

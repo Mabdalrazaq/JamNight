@@ -1,6 +1,6 @@
 package instrument;
 
-public class Guitar extends Stringed {
+public class Guitar extends StringedFamily {
 
   public Guitar(Builder builder) {
     super(builder);
@@ -10,9 +10,9 @@ public class Guitar extends Stringed {
     return InstrumentType.GUITAR;
   }
 
-  public static class Builder extends Stringed.Builder{
+  public static class Builder extends StringedFamily.Builder{
 
-    public Stringed build() {
+    public StringedFamily build() {
       return new Guitar(this);
     }
   }
