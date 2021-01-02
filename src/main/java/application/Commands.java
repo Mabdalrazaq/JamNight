@@ -25,8 +25,9 @@ public class Commands {
   }
 
   private static void removeMemberFromBand(Band band) {
-    if(band.getMembers().size()<=0)
+    if (band.getMembers().size() <= 0) {
       return;
+    }
     removedMember = band.getRandomMember();
     band.removeMember(removedMember);
     Printer.printLeaving(removedMember, band);
@@ -46,9 +47,10 @@ public class Commands {
   }
 
   private static void addRemovedMemberToBandlessGroup() {
-    if(removedMember!=null)
+    if (removedMember != null) {
       bandlessMusicians.add(removedMember);
-    removedMember=null;
+    }
+    removedMember = null;
   }
 
   private static void list() {
@@ -63,8 +65,9 @@ public class Commands {
   }
 
   private static void printBandlessDetails() {
-    if(bandlessMusicians.size()>0)
+    if (bandlessMusicians.size() > 0) {
       Printer.printBandlessMusiciansDetails(bandlessMusicians);
+    }
   }
 
   private static void exit() {

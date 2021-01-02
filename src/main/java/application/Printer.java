@@ -34,11 +34,11 @@ public class Printer {
     }
   }
 
-  public static void printStartingMessage(){
+  public static void printStartingMessage() {
     System.out.println("Your bands are all ready to perform.");
     System.out.println("Type 'list' to list bands and musicians"
-        +"\n"+"or 'play' to see what happens in one night of performance"
-        +"\n"+"or 'exit' to get out of the application");
+        + "\n" + "or 'play' to see what happens in one night of performance"
+        + "\n" + "or 'exit' to get out of the application");
 
   }
 

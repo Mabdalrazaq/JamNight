@@ -10,12 +10,12 @@ public class Piano extends KeyboardFamily {
     super(manufacturerName);
   }
 
-  public void setAcoustic(boolean isAcoustic) {
-    this.isAcoustic = isAcoustic;
-  }
-
   public boolean isAcoustic() {
     return isAcoustic;
+  }
+
+  public void setAcoustic(boolean isAcoustic) {
+    this.isAcoustic = isAcoustic;
   }
 
   public InstrumentType getType() {
@@ -38,18 +38,18 @@ public class Piano extends KeyboardFamily {
       return false;
     }
     Piano that = (Piano) o;
-    if(getManufacturerName()!=that.getManufacturerName())
+    if (getManufacturerName() != that.getManufacturerName()) {
       return false;
-    if(getNumOfKeys()!=that.getNumOfKeys())
+    }
+    if (getNumOfKeys() != that.getNumOfKeys()) {
       return false;
-    if(isAcoustic!=that.isAcoustic())
-      return false;
-    return true;
+    }
+    return isAcoustic == that.isAcoustic();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getManufacturerName(),getNumOfKeys(),isAcoustic);
+    return Objects.hash(getManufacturerName(), getNumOfKeys(), isAcoustic);
   }
 
 

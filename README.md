@@ -25,6 +25,3 @@ The application starts with a toy database already defined, and you can execute 
 In the folder called "json", in the root directory, there are 2 files: "bands.json" and "bandless.json".
 These 2 files define the structure of the bands in the database, and the structure of the musicians without bands (bandless).
 You can change the files based on your needs to have your own unique database.
-
-## Authors
-Mohammad Abdallah

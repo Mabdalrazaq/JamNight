@@ -27,16 +27,15 @@ public class Drums extends PercussionFamily {
       return false;
     }
     Drums that = (Drums) o;
-    if(getManufacturerName()!=that.getManufacturerName())
+    if (getManufacturerName() != that.getManufacturerName()) {
       return false;
-    if(hasHiHat()!=that.hasHiHat())
-      return false;
-    return true;
+    }
+    return hasHiHat() == that.hasHiHat();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getManufacturerName(),hasHiHat());
+    return Objects.hash(getManufacturerName(), hasHiHat());
   }
 
 

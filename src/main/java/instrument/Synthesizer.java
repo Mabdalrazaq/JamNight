@@ -38,18 +38,18 @@ public class Synthesizer extends KeyboardFamily {
       return false;
     }
     Synthesizer that = (Synthesizer) o;
-    if(getManufacturerName()!=that.getManufacturerName())
+    if (getManufacturerName() != that.getManufacturerName()) {
       return false;
-    if(getNumOfKeys()!=that.getNumOfKeys())
+    }
+    if (getNumOfKeys() != that.getNumOfKeys()) {
       return false;
-    if(hasLed!=that.hasLed())
-      return false;
-    return true;
+    }
+    return hasLed == that.hasLed();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getManufacturerName(),getNumOfKeys(),hasLed);
+    return Objects.hash(getManufacturerName(), getNumOfKeys(), hasLed);
   }
 
 }

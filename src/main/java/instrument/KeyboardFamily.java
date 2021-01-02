@@ -8,12 +8,12 @@ public abstract class KeyboardFamily extends AbstractInstrument {
     super(manufacturerName);
   }
 
-  public void setNumOfKeys(int numOfKeys) {
-    this.numOfKeys = numOfKeys;
-  }
-
   public int getNumOfKeys() {
     return numOfKeys;
+  }
+
+  public void setNumOfKeys(int numOfKeys) {
+    this.numOfKeys = numOfKeys;
   }
 
   @Override

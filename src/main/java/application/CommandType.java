@@ -6,10 +6,10 @@ public enum CommandType {
   EXIT,
   WRONG;
 
-  public static CommandType getTypeFromString(String commandString){
-    try{
+  public static CommandType getTypeFromString(String commandString) {
+    try {
       return valueOf(commandString);
-    }catch(IllegalArgumentException e){
+    } catch (IllegalArgumentException e) {
       return CommandType.WRONG;
     }
   }

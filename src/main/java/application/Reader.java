@@ -8,7 +8,6 @@ import database.JSONObjectWrapper;
 import instrument.Instrument;
 import java.io.FileReader;
 import java.io.IOException;
-import java.rmi.UnexpectedException;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.simple.JSONArray;
@@ -42,8 +41,8 @@ public class Reader {
     return buildListOfMusiciansFromJson(bandlessJsonArray);
   }
 
-  private static List<Musician> buildListOfMusiciansFromJson(JSONArrayWrapper jsonMusicians){
-    List<Musician> musicians=new ArrayList<>();
+  private static List<Musician> buildListOfMusiciansFromJson(JSONArrayWrapper jsonMusicians) {
+    List<Musician> musicians = new ArrayList<>();
     for (JSONObjectWrapper jsonMusician : jsonMusicians.getList()) {
       Musician musician = buildMusicianFromJson(jsonMusician);
       musicians.add(musician);

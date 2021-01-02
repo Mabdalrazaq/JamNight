@@ -10,19 +10,19 @@ public abstract class StringedFamily extends AbstractInstrument {
     super(manufacturerName);
   }
 
-  public void setStringsNum(int stringsNum) {
-    this.StringsNum = stringsNum;
+  public double getStringSize() {
+    return StringSize;
   }
 
   public void setStringSize(double stringSize) {
     this.StringSize = stringSize;
   }
 
-  public double getStringSize() {
-    return StringSize;
-  }
-
   public int getStringsNum() {
     return StringsNum;
+  }
+
+  public void setStringsNum(int stringsNum) {
+    this.StringsNum = stringsNum;
   }
 }

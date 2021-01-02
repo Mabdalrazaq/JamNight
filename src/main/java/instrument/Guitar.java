@@ -27,18 +27,18 @@ public class Guitar extends StringedFamily {
       return false;
     }
     Guitar that = (Guitar) o;
-    if(getManufacturerName()!=that.getManufacturerName())
+    if (getManufacturerName() != that.getManufacturerName()) {
       return false;
-    if(getStringSize()!=that.getStringSize())
+    }
+    if (getStringSize() != that.getStringSize()) {
       return false;
-    if(getStringsNum()!=that.getStringsNum())
-      return false;
-    return true;
+    }
+    return getStringsNum() == that.getStringsNum();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getManufacturerName(),getStringSize(),getStringsNum());
+    return Objects.hash(getManufacturerName(), getStringSize(), getStringsNum());
   }
 
 

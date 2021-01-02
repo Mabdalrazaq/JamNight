@@ -24,35 +24,35 @@ public class InstrumentBuilder {
   }
 
   private static Instrument buildGuitarFromJson(JSONObjectWrapper jsonInstrument) {
-    Guitar guitar=new Guitar(jsonInstrument.getString("manufacturer"));
+    Guitar guitar = new Guitar(jsonInstrument.getString("manufacturer"));
     guitar.setStringsNum(jsonInstrument.getInt("stringsNum"));
     guitar.setStringSize(jsonInstrument.getDouble("stringSize"));
     return guitar;
   }
 
   private static Instrument buildPianoFromJson(JSONObjectWrapper jsonInstrument) {
-    Piano piano=new Piano(jsonInstrument.getString("manufacturer"));
+    Piano piano = new Piano(jsonInstrument.getString("manufacturer"));
     piano.setAcoustic(jsonInstrument.getBoolean("isAcoustic"));
     piano.setNumOfKeys(jsonInstrument.getInt("keysNum"));
     return piano;
   }
 
   private static Instrument buildBanjoFromJson(JSONObjectWrapper jsonInstrument) {
-    Banjo banjo=new Banjo(jsonInstrument.getString("manufacturer"));
+    Banjo banjo = new Banjo(jsonInstrument.getString("manufacturer"));
     banjo.setStringsNum(jsonInstrument.getInt("stringsNum"));
     banjo.setStringSize(jsonInstrument.getDouble("stringSize"));
     return banjo;
   }
 
   private static Instrument buildSynthesizerFromJson(JSONObjectWrapper jsonInstrument) {
-    Synthesizer synthesizer=new Synthesizer(jsonInstrument.getString("manufacturer"));
+    Synthesizer synthesizer = new Synthesizer(jsonInstrument.getString("manufacturer"));
     synthesizer.setHasLed(jsonInstrument.getBoolean("hasLed"));
     synthesizer.setNumOfKeys(jsonInstrument.getInt("keysNum"));
     return synthesizer;
   }
 
   private static Instrument buildDrumsFromJson(JSONObjectWrapper jsonInstrument) {
-    Drums drums=new Drums(jsonInstrument.getString("manufacturer"));
+    Drums drums = new Drums(jsonInstrument.getString("manufacturer"));
     drums.setHasHiHat(jsonInstrument.getBoolean("hasHiHat"));
     return drums;
   }
