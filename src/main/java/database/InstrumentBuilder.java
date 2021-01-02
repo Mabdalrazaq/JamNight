@@ -25,8 +25,8 @@ public class InstrumentBuilder {
 
   private static Instrument buildGuitarFromJson(JSONObjectWrapper jsonInstrument) {
     Guitar guitar=new Guitar(jsonInstrument.getString("manufacturer"));
-    guitar.setNumOfStrings(jsonInstrument.getInt("stringsNum"));
-    guitar.setSizeOfString(jsonInstrument.getDouble("stringSize"));
+    guitar.setStringsNum(jsonInstrument.getInt("stringsNum"));
+    guitar.setStringSize(jsonInstrument.getDouble("stringSize"));
     return guitar;
   }
 
@@ -39,8 +39,8 @@ public class InstrumentBuilder {
 
   private static Instrument buildBanjoFromJson(JSONObjectWrapper jsonInstrument) {
     Banjo banjo=new Banjo(jsonInstrument.getString("manufacturer"));
-    banjo.setNumOfStrings(jsonInstrument.getInt("stringsNum"));
-    banjo.setSizeOfString(jsonInstrument.getDouble("stringSize"));
+    banjo.setStringsNum(jsonInstrument.getInt("stringsNum"));
+    banjo.setStringSize(jsonInstrument.getDouble("stringSize"));
     return banjo;
   }
 

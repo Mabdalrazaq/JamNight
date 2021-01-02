@@ -12,6 +12,10 @@ public class Piano extends KeyboardFamily {
     this.isAcoustic = isAcoustic;
   }
 
+  public boolean isAcoustic() {
+    return isAcoustic;
+  }
+
   public InstrumentType getType() {
     return InstrumentType.PIANO;
   }

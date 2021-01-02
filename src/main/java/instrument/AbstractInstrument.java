@@ -8,6 +8,10 @@ public abstract class AbstractInstrument implements Instrument {
     this.manufacturerName = manufacturerName;
   }
 
+  public String getManufacturerName() {
+    return manufacturerName;
+  }
+
   @Override
   public String toString() {
     return "-manufacturer: " + manufacturerName;

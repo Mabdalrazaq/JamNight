@@ -2,26 +2,27 @@ package instrument;
 
 public abstract class StringedFamily extends AbstractInstrument {
 
-  private int numOfStrings;
-  private double sizeOfString; //In mm
+  private int StringsNum;
+  private double StringSize; //In mm
 
 
   public StringedFamily(String manufacturerName) {
     super(manufacturerName);
   }
 
-  public void setNumOfStrings(int numOfStrings) {
-    this.numOfStrings = numOfStrings;
+  public void setStringsNum(int stringsNum) {
+    this.StringsNum = stringsNum;
   }
 
-  public void setSizeOfString(double sizeOfString) {
-    this.sizeOfString = sizeOfString;
+  public void setStringSize(double stringSize) {
+    this.StringSize = stringSize;
   }
 
-  @Override
-  public String toString() {
-    return "-number of strings: " + numOfStrings
-        + "\n" + "-string size: " + sizeOfString + "mm"
-        + "\n" + super.toString();
+  public double getStringSize() {
+    return StringSize;
+  }
+
+  public int getStringsNum() {
+    return StringsNum;
   }
 }

@@ -12,6 +12,10 @@ public class Synthesizer extends KeyboardFamily {
     this.hasLed = hasLed;
   }
 
+  public boolean hasLed() {
+    return hasLed;
+  }
+
   public InstrumentType getType() {
     return InstrumentType.SYNTHESIZER;
   }

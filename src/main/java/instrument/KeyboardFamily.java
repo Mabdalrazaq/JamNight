@@ -12,6 +12,10 @@ public abstract class KeyboardFamily extends AbstractInstrument {
     this.numOfKeys = numOfKeys;
   }
 
+  public int getNumOfKeys() {
+    return numOfKeys;
+  }
+
   @Override
   public String toString() {
     return "-number of key: " + numOfKeys
