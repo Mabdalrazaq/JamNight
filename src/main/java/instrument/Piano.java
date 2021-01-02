@@ -1,5 +1,7 @@
 package instrument;
 
+import java.util.Objects;
+
 public class Piano extends KeyboardFamily {
 
   private boolean isAcoustic;
@@ -26,5 +28,29 @@ public class Piano extends KeyboardFamily {
         + "\n" + "-is" + (isAcoustic ? " " : " not ") + "acoustic"
         + "\n" + super.toString();
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Piano that = (Piano) o;
+    if(getManufacturerName()!=that.getManufacturerName())
+      return false;
+    if(getNumOfKeys()!=that.getNumOfKeys())
+      return false;
+    if(isAcoustic!=that.isAcoustic())
+      return false;
+    return true;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getManufacturerName(),getNumOfKeys(),isAcoustic);
+  }
+
 
 }

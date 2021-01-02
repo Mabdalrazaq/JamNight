@@ -1,5 +1,7 @@
 package instrument;
 
+import java.util.Objects;
+
 public class Synthesizer extends KeyboardFamily {
 
   private boolean hasLed;
@@ -26,4 +28,28 @@ public class Synthesizer extends KeyboardFamily {
         + "\n" + "-has" + (hasLed ? " " : " no ") + "led"
         + "\n" + super.toString();
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Synthesizer that = (Synthesizer) o;
+    if(getManufacturerName()!=that.getManufacturerName())
+      return false;
+    if(getNumOfKeys()!=that.getNumOfKeys())
+      return false;
+    if(hasLed!=that.hasLed())
+      return false;
+    return true;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getManufacturerName(),getNumOfKeys(),hasLed);
+  }
+
 }

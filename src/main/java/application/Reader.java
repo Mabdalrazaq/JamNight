@@ -8,6 +8,7 @@ import database.JSONObjectWrapper;
 import instrument.Instrument;
 import java.io.FileReader;
 import java.io.IOException;
+import java.rmi.UnexpectedException;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.simple.JSONArray;
@@ -26,29 +27,28 @@ public class Reader {
   }
 
   public static List<Band> readBandsFromJson() {
-    List<Band> bands = new ArrayList<>();
     parseJsonBands();
+    List<Band> bands = new ArrayList<>();
     for (JSONObjectWrapper jsonBand : bandsJsonArray.getList()) {
       Band band = new Band(jsonBand.getString("name"));
       JSONArrayWrapper jsonMusicians = jsonBand.getJsonArray("members");
-      for (JSONObjectWrapper jsonMusician : jsonMusicians.getList()) {
-        Musician musician = buildMusicianFromJson(jsonMusician);
-        band.addMember(musician);
-      }
-      bands.add(band);
+      band.addMembers(buildListOfMusiciansFromJson(jsonMusicians));
     }
     return bands;
   }
 
-
   public static List<Musician> readBandlessMusiciansFromJson() {
-    List<Musician> bandless = new ArrayList<>();
     parseJsonBandless();
-    for (JSONObjectWrapper jsonMusician : bandlessJsonArray.getList()) {
+    return buildListOfMusiciansFromJson(bandlessJsonArray);
+  }
+
+  private static List<Musician> buildListOfMusiciansFromJson(JSONArrayWrapper jsonMusicians){
+    List<Musician> musicians=new ArrayList<>();
+    for (JSONObjectWrapper jsonMusician : jsonMusicians.getList()) {
       Musician musician = buildMusicianFromJson(jsonMusician);
-      bandless.add(musician);
+      musicians.add(musician);
     }
-    return bandless;
+    return musicians;
   }
 
   private static Musician buildMusicianFromJson(JSONObjectWrapper jsonMusician) {
@@ -63,9 +63,9 @@ public class Reader {
     try (FileReader reader = new FileReader(BANDS_JSON)) {
       bandsJsonArray = new JSONArrayWrapper((JSONArray) jsonParser.parse(reader));
     } catch (ParseException e) {
-      System.out.println(e.getMessage());
+      throw new UnsupportedOperationException("there is something wrong with the json file");
     } catch (IOException e) {
-      System.out.println(e.getMessage());
+      throw new IllegalArgumentException("file not found");
     }
   }
 
@@ -73,9 +73,9 @@ public class Reader {
     try (FileReader reader = new FileReader(BANDLESS_JSON)) {
       bandlessJsonArray = new JSONArrayWrapper((JSONArray) jsonParser.parse(reader));
     } catch (ParseException e) {
-      System.out.println(e.getMessage());
+      throw new UnsupportedOperationException("there is something wrong with the json file");
     } catch (IOException e) {
-      System.out.println(e.getMessage());
+      throw new IllegalArgumentException("file not found");
     }
   }
 
