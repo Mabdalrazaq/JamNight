@@ -15,4 +15,10 @@ public abstract class PercussionFamily extends AbstractInstrument {
   public boolean hasHiHat() {
     return hasHiHat;
   }
+
+  @Override
+  public String toString() {
+    return "-has" + (hasHiHat ? " " : " no ") + "hi-hat"
+        + "\n" + super.toString();
+  }
 }

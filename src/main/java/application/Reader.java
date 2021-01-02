@@ -32,6 +32,7 @@ public class Reader {
       Band band = new Band(jsonBand.getString("name"));
       JSONArrayWrapper jsonMusicians = jsonBand.getJsonArray("members");
       band.addMembers(buildListOfMusiciansFromJson(jsonMusicians));
+      bands.add(band);
     }
     return bands;
   }

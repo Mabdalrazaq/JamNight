@@ -18,7 +18,7 @@ public abstract class KeyboardFamily extends AbstractInstrument {
 
   @Override
   public String toString() {
-    return "-number of key: " + numOfKeys
+    return "-number of keys: " + numOfKeys
         + "\n" + super.toString();
   }
 

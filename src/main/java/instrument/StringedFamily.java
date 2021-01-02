@@ -2,8 +2,8 @@ package instrument;
 
 public abstract class StringedFamily extends AbstractInstrument {
 
-  private int StringsNum;
-  private double StringSize; //In mm
+  private int stringsNum;
+  private double stringSize; //In mm
 
 
   public StringedFamily(String manufacturerName) {
@@ -11,18 +11,24 @@ public abstract class StringedFamily extends AbstractInstrument {
   }
 
   public double getStringSize() {
-    return StringSize;
+    return stringSize;
   }
 
   public void setStringSize(double stringSize) {
-    this.StringSize = stringSize;
+    this.stringSize = stringSize;
   }
 
   public int getStringsNum() {
-    return StringsNum;
+    return stringsNum;
   }
 
   public void setStringsNum(int stringsNum) {
-    this.StringsNum = stringsNum;
+    this.stringsNum = stringsNum;
+  }
+
+  public String toString() {
+    return "-number of strings: " + stringsNum
+        + "\n" + "-string size: " + stringSize + "mm"
+        + "\n" + super.toString();
   }
 }
