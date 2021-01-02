@@ -10,21 +10,26 @@ import java.util.Scanner;
 
 public class Commands {
 
+  private static Musician removedMember;
+
+
   private Commands() {
   }
 
   private static void play() {
     for (Band band : bands) {
-      Musician memberToBeRemoved = band.getRandomMember();
-      removeMemberFromBand(memberToBeRemoved, band);
+      removeMemberFromBand(band);
       addNewMemberToBand(band);
-      addRemovedMemberToBandlessGroup(memberToBeRemoved);
+      addRemovedMemberToBandlessGroup();
     }
   }
 
-  private static void removeMemberFromBand(Musician memberToBeRemoved, Band band) {
-    band.removeMember(memberToBeRemoved);
-    Printer.printLeaving(memberToBeRemoved, band);
+  private static void removeMemberFromBand(Band band) {
+    if(band.getMembers().size()<=0)
+      return;
+    removedMember = band.getRandomMember();
+    band.removeMember(removedMember);
+    Printer.printLeaving(removedMember, band);
   }
 
   private static void addNewMemberToBand(Band band) {
@@ -40,15 +45,26 @@ public class Commands {
     }
   }
 
-  private static void addRemovedMemberToBandlessGroup(Musician memberToBeRemoved) {
-    bandlessMusicians.add(memberToBeRemoved);
+  private static void addRemovedMemberToBandlessGroup() {
+    if(removedMember!=null)
+      bandlessMusicians.add(removedMember);
+    removedMember=null;
   }
 
   private static void list() {
+    printBandsDetails();
+    printBandlessDetails();
+  }
+
+  private static void printBandsDetails() {
     for (Band band : bands) {
       Printer.printBandDetails(band);
     }
-    Printer.printBandlessMusiciansDetails(bandlessMusicians);
+  }
+
+  private static void printBandlessDetails() {
+    if(bandlessMusicians.size()>0)
+      Printer.printBandlessMusiciansDetails(bandlessMusicians);
   }
 
   private static void exit() {
