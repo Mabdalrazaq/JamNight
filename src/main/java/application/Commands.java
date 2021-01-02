@@ -58,12 +58,12 @@ public class Commands {
   public static void executeCommand() {
     System.out.print("$ ");
     Scanner scanner = new Scanner(System.in);
-    String commandQuery = scanner.nextLine();
-    switch (commandQuery.toLowerCase()) {
-      case "play" -> play();
-      case "list" -> list();
-      case "exit" -> exit();
-      default -> Printer.printWrongCommand();
+    String commandString = scanner.nextLine();
+    switch (CommandType.getTypeFromString(commandString.toUpperCase())) {
+      case PLAY -> play();
+      case LIST -> list();
+      case EXIT -> exit();
+      case WRONG -> Printer.printWrongCommand();
     }
     executeCommand();
   }
