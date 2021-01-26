@@ -6,6 +6,7 @@ import static database.DB.bands;
 import band.Band;
 import band.Musician;
 import java.util.Collections;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Commands {
@@ -75,16 +76,18 @@ public class Commands {
   }
 
   public static void executeCommand() {
-    System.out.print("$ ");
     Scanner scanner = new Scanner(System.in);
-    String commandString = scanner.nextLine();
-    switch (CommandType.getTypeFromString(commandString.toUpperCase())) {
-      case PLAY -> play();
-      case LIST -> list();
-      case EXIT -> exit();
-      case WRONG -> Printer.printWrongCommand();
+    String commandString = "";
+    do {
+      Printer.printStartingMessage();
+      System.out.print("$ ");
+      commandString = scanner.nextLine();
+      switch (CommandType.getTypeFromString(commandString.toUpperCase())) {
+        case PLAY-> play();
+        case LIST-> list();
+        case WRONG-> Printer.printWrongCommand();
+      }
     }
-    executeCommand();
+    while (!commandString.toLowerCase().equals("exit"));
   }
-
 }
